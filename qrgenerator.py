@@ -7,7 +7,18 @@ qr = qrcode.QRCode(
     border = 10
 )
 
-website = "https://www.google.ca/"
+
+satisfy = "No"
+
+while (satisfy == "No"):
+    website = input("Please enter the URL link to generate the QR code for: ")
+    print("The URL is:" + str(website))
+    satisfy = input("Are you satisfied with this URL? (Yes/No)")
+    
+    while (satisfy != "Yes" and satisfy != "No"):
+        satisfy = input("Invalid response. Please only type in Yes or No.")
+    
+
 
 qr.add_data(website)
 qr.make(fit = True)
